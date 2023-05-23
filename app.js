@@ -36,9 +36,6 @@ app.use(limitter({
     max:30
 }))
 
-//server.listen(3000,()=> {
-//    console.log("Server up and Runnning");
-//})
 
 //Student Rest Apis
 app.use(studentRoutes);

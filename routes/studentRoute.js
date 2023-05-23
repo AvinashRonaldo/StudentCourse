@@ -14,10 +14,9 @@ router.post("/login",async(req,res) => {
     const [student,metadata ] = await sequelize.query('SELECT student_id,student_name,student_email,password,isAdmin from students where student_name=?',{
         replacements:[uname],type: QueryTypes.SELECT
     });
-    //console.log(student.password);
-    /*const student =await Student.findOne({where:{
-        student_name : uname
-    }});*/
+    if(!student){
+        return res.status(400).send({message:"No user found with that credentials"});
+    }
     if(student.password != pass){
         res.status(404).json({message : "Invalid Credentials"});
     }
