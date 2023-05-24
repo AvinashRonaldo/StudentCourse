@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # StudentCourse
 
 Description : Created a simple student enrollment in courses via Rest Apis using Sequelize ORM
@@ -24,3 +25,6 @@ JWT (which is a diff topic) .
 Deleting a course will remove all students who are registered in that particular course this can be done by removeStudent() method.
 Deleting a student will de register he/she from his/her registered courses.
 
+=======
+# StudentCourse
+>>>>>>> eff68f5d5a3e874e6a7afdc2af98435e4225e1bb
