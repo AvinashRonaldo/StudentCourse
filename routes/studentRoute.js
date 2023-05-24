@@ -51,7 +51,7 @@ router.get("/students",isAuthenticated,isAdmin,async(req,res) => {
         console.log(err);
     }
 })
-
+//Get single student info
 router.get("/students/:studentId",isAuthenticated,async(req,res) => {
     try{
     const { studentId } = req.params;

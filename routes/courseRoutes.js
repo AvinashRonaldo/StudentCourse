@@ -25,14 +25,12 @@ router.get("/courses",isAuthenticated,async(req,res)=> {
 router.post("/course",isAdmin,async(req,res)=> {
     try{
         const course = await Course.findOne({where : {course_name : req.body.course_name}})
-
         if(course){
         res.status(404).send("A Course with that name already exists");
         return;
-        } else{
+        } else {
         const newCourse = await Course.create(req.body);
-
-        res.send("course added successfully");
+        res.send(`course added successfully with id ${newCourse.course_id}`);
         }
     }
     catch(err){

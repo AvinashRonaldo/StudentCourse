@@ -80,6 +80,7 @@ sequelize.query('DROP TABLE IF EXISTS "students_backup";')
     console.error('Unable to drop backup table:', err);
   });
 
+// Created m:n associations b/w Student and Course tables.
 Student.belongsToMany(Course,{through:StudentCourse,onDelete:'cascade'});
 Course.belongsToMany(Student,{through:StudentCourse,onDelete:'cascade'});
 
